@@ -13,7 +13,7 @@ def read_json(filename):
 
 def init_json(data, data_name, filename):
     with open(filename, 'w') as file:
-        json.dump({data_name: [data]}, fp=file, indent=4)
+        json.dump({data_name: [data]}, fp=file, indent=4, ensure_ascii=False)
 
 
 def add_to_json(data, data_name, filename):
@@ -22,7 +22,7 @@ def add_to_json(data, data_name, filename):
         data_list[data_name].append(data)
         file.seek(0)
 
-        json.dump(data_list, fp=file, indent=4)
+        json.dump(data_list, fp=file, indent=4, ensure_ascii=False)
 
 
 def save_to_json(text, data_name, filename):
